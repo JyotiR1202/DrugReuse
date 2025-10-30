@@ -476,44 +476,25 @@ with tabs[0]:
     st.markdown("### 🚀 Getting Started")
     
     st.info("""
-        **📋 Before You Begin:**
-        
-        1. **Train Your Model** :
-        - Create an `interactions.csv` file with columns: `drug_id`, `disease_id`, `smiles`
-        - Train a GNN model using your interaction data
-        - This generates the required `.pth` and `.pkl` files  
-            **OR**  
-            Download Already Trained Model Below 👇
+    **📋 Before You Begin:**
+    
+    1. **Train Your Model** (Optional - if you don't have model files):
+       - Create an `interactions.csv` file with columns: `drug_id`, `disease_id`, `smiles`
+       - Train a GNN model using your interaction data
+       - This generates the required `.pth` and `.pkl` files
+
+       **OR**
+       Download From Github(https://github.com/JyotiR1202/DrugReuse)
+    
+    2. **Upload Required Files** (in the left sidebar ⬅️):
+       - 🔹 **Trained Model** (.pth) - Your trained GNN model weights
+       - 🔹 **Label Encoder** (.pkl) - Disease label encoder from training
+       - 🔹 **Diseases CSV** - Contains disease_id and disease_name columns
+       - 🔹 **Enamine CSV** (Optional) - Check drug availability in Enamine database
+    
+    3. **Start Predicting!** - Once files are uploaded, you are ready!!.
     """)
-
-    # --- Download Buttons Section ---
-    files_dir = "files"
-    pth_file = os.path.join(files_dir, "model.pth")
-    pkl_file = os.path.join(files_dir, "scaler.pkl")
-    csv_file = os.path.join(files_dir, "data.csv")
-
-    col1, col2, col3 = st.columns(3)
-    with col1:
-        with open(pth_file, "rb") as f:
-            st.download_button("Download Model (.pth)", f, "model.pth", mime="application/octet-stream")
-    with col2:
-        with open(pkl_file, "rb") as f:
-            st.download_button("Download Encoder (.pkl)", f, "scaler.pkl", mime="application/octet-stream")
-    with col3:
-        with open(csv_file, "rb") as f:
-            st.download_button("Download Data (.csv)", f, "data.csv", mime="text/csv")
-
-    st.info("""
-        2. **Upload Required Files** (in the left sidebar ⬅️):
-        - 🔹 **Trained Model** (.pth) - Your trained GNN model weights  
-        - 🔹 **Label Encoder** (.pkl) - Disease label encoder from training  
-        - 🔹 **Diseases CSV** - Contains disease_id and disease_name columns  
-        - 🔹 **Enamine CSV** (Optional) - Check drug availability in Enamine database  
-
-        3. **Start Predicting!** - Once files are uploaded, you are ready!!
-    """)
-
-        
+    
     st.markdown("---")
     
     # Three Main Features
