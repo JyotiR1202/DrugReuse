@@ -1,0 +1,10 @@
+streamlit==1.39.0
+requests==2.32.3
+pandas==2.2.2
+numpy==1.26.4
+rdkit-pypi==2022.9.5
+torch==2.4.1
+torch-geometric==2.5.3
+matplotlib==3.9.2
+seaborn==0.13.2
+scikit-learn==1.5.2
